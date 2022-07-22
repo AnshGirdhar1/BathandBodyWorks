@@ -1,5 +1,6 @@
-import {Flex,Image,Box,Input,Link,UnorderedList,ListItem} from "@chakra-ui/react"
- export const IconStyles={fontSize:"22px", color : "#005699"}
+import {Flex,Image,Box,Input,UnorderedList,ListItem} from "@chakra-ui/react"
+import {Link} from "react-router-dom";
+export const IconStyles={fontSize:"22px", color : "#005699"}
 export default function Navbar(){
     const borderBottomStyles={borderBottom : "3px solid #005699",}
     function handleFocus(e){
@@ -21,7 +22,7 @@ export default function Navbar(){
                 <i style={IconStyles} className="fa-solid fa-magnifying-glass"></i>
             </Flex>
             <i style={IconStyles} className="fa-solid fa-circle-user"></i>
-            <i style={IconStyles} className="fa-solid fa-bag-shopping"></i>
+            <Link to="/cart"><i style={IconStyles} className="fa-solid fa-bag-shopping"></i></Link>
         </Flex>
         </Flex>
         <Flex pt="20px">

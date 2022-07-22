@@ -3,10 +3,10 @@ import axios from "axios";
 import { useState } from "react";
 
 
-export default function FilterSort({products1,setProducts1}){
+export default function FilterSort({products1,setProducts1,page}){
     const filterChange = async (e) => {
        if(e.target.value === "default"){
-          let res = await axios.get("http://localhost:5006/products");
+          let res = await axios.get(`http://localhost:5006/products?_page=${page}&_limit=10`);
           return setProducts1(res.data);
        }
        let updatedData = products1.filter((product) =>(
@@ -15,7 +15,7 @@ export default function FilterSort({products1,setProducts1}){
        setProducts1(updatedData);
     }
 
-    const sortChange = (e) => {
+    const sortChange = async (e) => {
         if(e.target.value !== "default") {
         if(e.target.value === "htl"){
             let sortedlist = products1.sort((a,b) => {
@@ -28,7 +28,10 @@ export default function FilterSort({products1,setProducts1}){
         })
             setProducts1([...sortedlist]);
         }
-    }
+        } else {
+          let res = await axios.get(`http://localhost:5006/products?_page=${page}&_limit=10`);
+          setProducts1(res.data);
+        }
     }
 
     return (

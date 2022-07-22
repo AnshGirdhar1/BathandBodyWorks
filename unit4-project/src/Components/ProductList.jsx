@@ -2,16 +2,18 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { Grid,GridItem,Box,Image,Heading,Button,Text,Flex,Select} from "@chakra-ui/react";
 import FilterSort from "./FilterSort";
+import Pagination from "./Pagination";
 
 export default function ProductList(){
     const [products1,setProducts1] = useState([]);
+    const [page,setPage] = useState(1);
     const getProducts = async () => {
-       let res = await axios.get("http://localhost:5006/products");
+       let res = await axios.get(`http://localhost:5006/products/?_page=${page}&_limit=10`);
        setProducts1(res.data);
     }
     useEffect(() => {
         getProducts();
-    },[])
+    },[page])
 
     async function addToBag(id){
         let flag = false;
@@ -39,10 +41,10 @@ export default function ProductList(){
         })
         }
     }
-    
+
     return (
         <Box>
-        <FilterSort products1={products1} setProducts1={setProducts1} /> 
+        <FilterSort products1={products1} setProducts1={setProducts1} page={page}/> 
         <Grid templateColumns='repeat(4, 1fr)' gap="25px"  w="90%" m="0px 5%" p="50px 0">
             {products1.map((product) => {
                 return <GridItem w="100%" textAlign="center" p="20px" borderWidth="2px" borderColor="#f2f2f2" _hover={{boxShadow : "lg", transition : "0.5s all"}} key={product.id}>
@@ -57,6 +59,7 @@ export default function ProductList(){
                 </GridItem>
             })}
         </Grid>
+        <Pagination total={20/10} setPage={setPage} page={page} />
         </Box>
     )
 }
