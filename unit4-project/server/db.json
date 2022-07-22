@@ -263,43 +263,46 @@
   ],
   "cart": [
     {
-      "id": 1,
+      "id": 17,
       "tag": "New!",
-      "title": "Pinkberry Clouds",
-      "price": 9,
-      "description": "Ultimate Hydration Body Cream",
-      "category": "body cream",
-      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb6e3f9f3/hires/026498930.jpg?sh=471&yocs=o_s_",
+      "title": "Enchanted Candy Potion",
+      "price": 26,
+      "description": "Shimmer Fizz Body lotion",
+      "category": "body lotion",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw14cde29c/hires/026494233.jpg?sh=471&yocs=o_s_",
       "rating": {
-        "rate": 3.9,
-        "count": 120
-      }
+        "rate": 3.8,
+        "count": 679
+      },
+      "qty": 3
     },
     {
-      "id": 7,
+      "id": 18,
       "tag": "Exclusive",
-      "title": "Into The Night",
-      "price": 16,
-      "description": "Exfoliating Glow Body Scrub",
-      "category": "body scrub",
-      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwccfe3f46/hires/026502473.jpg?sh=471&yocs=o_s_",
-      "rating": {
-        "rate": 3,
-        "count": 400
-      }
-    },
-    {
-      "id": 3,
-      "tag": "Exclusive",
-      "title": "Eucalyptus Mint",
-      "price": 19,
-      "description": "Body and Massage Oil",
-      "category": "body oil",
-      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw2238708b/hires/026310856.jpg?sh=471&yocs=o_s_",
+      "title": "Noir",
+      "price": 29,
+      "description": "3 in 1 Face, Hair & Bod y Wash",
+      "category": "body wash & shower gel",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw4b6b7a69/hires/026311425.jpg?sh=471&yocs=o_s_",
       "rating": {
         "rate": 4.7,
-        "count": 500
-      }
+        "count": 130
+      },
+      "qty": 1
+    },
+    {
+      "id": 19,
+      "tag": "BestSeller",
+      "title": "Sandalwood Mandarin",
+      "price": 25,
+      "description": "Moisturizing Body Lotion",
+      "category": "body lotion",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwf7bfbc71/hires/026398798.jpg?sh=471&yocs=o_s_",
+      "rating": {
+        "rate": 4.5,
+        "count": 146
+      },
+      "qty": 1
     }
   ]
 }

@@ -3,8 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 
 
-export default function FilterSort({products1,setProducts1,sortChange}){
-    const some = []
+export default function FilterSort({products1,setProducts1}){
     const filterChange = async (e) => {
        if(e.target.value === "default"){
           let res = await axios.get("http://localhost:5006/products");
@@ -15,6 +14,23 @@ export default function FilterSort({products1,setProducts1,sortChange}){
        ))
        setProducts1(updatedData);
     }
+
+    const sortChange = (e) => {
+        if(e.target.value !== "default") {
+        if(e.target.value === "htl"){
+            let sortedlist = products1.sort((a,b) => {
+                return b.price - a.price;
+        })
+            setProducts1([...sortedlist]);
+        } else if(e.target.value === "lth"){
+            let sortedlist = products1.sort((a,b) => {
+                return a.price - b.price;
+        })
+            setProducts1([...sortedlist]);
+        }
+    }
+    }
+
     return (
         <Box bg="#005699" p="20px 0" mt="50px">
         <Flex gap="20px" w="90%" m="0 5%">
