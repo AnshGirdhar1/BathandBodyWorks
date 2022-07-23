@@ -1,8 +1,8 @@
-import {Flex,Image,Box,Input,UnorderedList,ListItem} from "@chakra-ui/react"
+import {Flex,Image,Box,Input,UnorderedList,ListItem,Text} from "@chakra-ui/react"
 import {Link} from "react-router-dom";
 export const IconStyles={fontSize:"22px", color : "#005699"}
 export default function Navbar(){
-    const borderBottomStyles={borderBottom : "3px solid #005699",}
+    const borderBottomStyles={borderBottom : "3px solid #005699"}
     function handleFocus(e){
         e.target.parentNode.style.width="100%";
     }
@@ -16,12 +16,12 @@ export default function Navbar(){
         <Flex w="60%" justify="flex-end">
             <Image maxW={320} src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dwe188b42c/images/svg-icons/Logos-main.svg?yocs=o_s_" alt="logo"/>
         </Flex>
-        <Flex w="40%" justify="flex-end" gap="15px" h="40px" align="center">
+        <Flex w="40%" justify="flex-end" gap="15px" h="40px" align="center" pos="relative">
             <Flex borderWidth="1px" gap="15px" h="40px" align="center" pr="10px" w="70%" ml="20px">
                 <Input onBlur={(e) => handleBlur(e)} onFocus={(e) => handleFocus(e)} _focusVisible={{outline:"none"}} borderWidth="0px" placeholder="Search by fragrance or products"/>
                 <i style={IconStyles} className="fa-solid fa-magnifying-glass"></i>
             </Flex>
-            <i style={IconStyles} className="fa-solid fa-circle-user"></i>
+            <Link to="/signup&login"><i style={IconStyles} className="fa-solid fa-circle-user"></i></Link>
             <Link to="/cart"><i style={IconStyles} className="fa-solid fa-bag-shopping"></i></Link>
         </Flex>
         </Flex>

@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar';
 import Footer from "./Components/Footer";
 import ProductList from './Components/ProductList';
 import CartList from './Components/CartList';
+import SignupLogin from './Components/SignupLogin';
 import {Routes,Route} from "react-router-dom";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ProductList/>}/>
         <Route path="/cart" element={<CartList/>} />
+        <Route path="/signup&login" element={<SignupLogin/>}/>
       </Routes>
       <Footer/>
     </div>
