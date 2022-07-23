@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { Grid,GridItem,Box,Image,Heading,Button,Text,Flex,Select} from "@chakra-ui/react";
+import { Grid,GridItem,Box,Image,Heading,Button,Text,Flex,Select, useToast} from "@chakra-ui/react";
 import FilterSort from "./FilterSort";
 import Pagination from "./Pagination";
 
 export default function ProductList(){
     const [products1,setProducts1] = useState([]);
     const [page,setPage] = useState(1);
+    const toast = useToast();
+
     const getProducts = async () => {
        let res = await axios.get(`http://localhost:5006/products/?_page=${page}&_limit=10`);
        setProducts1(res.data);
@@ -29,6 +31,7 @@ export default function ProductList(){
                 })
             }
         })
+
         if(flag === false) {
         products1.map((product) => {
             if(id === product.id){
@@ -40,6 +43,14 @@ export default function ProductList(){
             }
         })
         }
+
+        toast({
+          title: 'Item Successfully Added To Your Bag',
+          status: 'success',
+          duration: 4000,
+          isClosable: true,
+          position : 'top'
+        })
     }
 
     return (
