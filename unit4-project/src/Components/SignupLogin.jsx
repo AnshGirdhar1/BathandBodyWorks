@@ -21,7 +21,7 @@ export default function SignupLogin(){
     async function signupSubmit(e){
         e.preventDefault();
         let accountExists = false;
-        let res = await axios.get("http://localhost:5006/signup");
+        let res = await axios.get("https://bathandbodyworksclone.herokuapp.com/signup");
         res.data.map((user) => {
             if(user.email === signupData.email){
                 toast({
@@ -38,7 +38,7 @@ export default function SignupLogin(){
         if(accountExists === false){
             axios({
                 method : "POST",
-                url : "http://localhost:5006/signup",
+                url : "https://bathandbodyworksclone.herokuapp.com/signup",
                 data : signupData
             })
         }
@@ -53,7 +53,7 @@ export default function SignupLogin(){
     async function signinSubmit(e){
         e.preventDefault();
         let accountExists = false;
-        let res = await axios.get("http://localhost:5006/signup");
+        let res = await axios.get("https://bathandbodyworksclone.herokuapp.com/signup");
         res.data.map((user) => {
             if(user.email === signinData.email && user.password === signinData.password){
                 toast({

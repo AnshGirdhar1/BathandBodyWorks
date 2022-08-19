@@ -8,7 +8,7 @@ export default function CartList(){
     const [total,setTotal] = useState(0);
     const toast1 = useToast();
     async function getCartProducts(){
-        const res = await axios.get("http://localhost:5006/cart");
+        const res = await axios.get("https://bathandbodyworksclone.herokuapp.com/cart");
         setCartProducts(res.data);
     }
 
@@ -19,7 +19,7 @@ export default function CartList(){
     function deleteFromCart(id){
         axios({
             method : "DELETE",
-            url : `http://localhost:5006/cart/${id}`
+            url : `https://bathandbodyworksclone.herokuapp.com/cart/${id}`
         })
         getCartProducts();
 
@@ -38,7 +38,7 @@ export default function CartList(){
             if(product.id === id){
                 axios({
                 method : "PATCH",
-                url : `http://localhost:5006/cart/${id}`,
+                url : `https://bathandbodyworksclone.herokuapp.com/cart/${id}`,
                 data : {...product, qty : product.qty + change}
                 })
             }

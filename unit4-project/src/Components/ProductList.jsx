@@ -10,7 +10,7 @@ export default function ProductList(){
     const toast = useToast();
 
     const getProducts = async () => {
-       let res = await axios.get(`http://localhost:5006/products/?_page=${page}&_limit=10`);
+       let res = await axios.get(`https://bathandbodyworksclone.herokuapp.com/products/?_page=${page}&_limit=12`);
        setProducts1(res.data);
     }
     useEffect(() => {
@@ -19,14 +19,14 @@ export default function ProductList(){
 
     async function addToBag(id){
         let flag = false;
-        const response = await axios.get("http://localhost:5006/cart");
+        const response = await axios.get("https://bathandbodyworksclone.herokuapp.com/cart");
         const cartData = response.data;
         cartData.map((singleProduct) => {
             if(singleProduct.id === id){
                 flag = true;
                 axios({
                     method : "PATCH",
-                    url : `http://localhost:5006/cart/${id}`,
+                    url : `https://bathandbodyworksclone.herokuapp.com/cart/${id}`,
                     data : {...singleProduct, qty : singleProduct.qty + 1}
                 })
             }
@@ -37,7 +37,7 @@ export default function ProductList(){
             if(id === product.id){
             axios({
             method : "POST",
-            url : "http://localhost:5006/cart",
+            url : "https://bathandbodyworksclone.herokuapp.com/cart",
             data : {...product, qty : 1}
             })
             }
@@ -70,7 +70,7 @@ export default function ProductList(){
                 </GridItem>
             })}
         </Grid>
-        <Pagination total={20/10} setPage={setPage} page={page} />
+        <Pagination total={20/12} setPage={setPage} page={page} />
         </Box>
     )
 }

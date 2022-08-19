@@ -269,6 +269,20 @@
       "email": "anshgirdhar20@gmail.com",
       "password": "urlhaijiurlhaiji",
       "id": 1
+    },
+    {
+      "firstname": "ansh",
+      "lastname": "girdhar",
+      "email": "anshgirdhar99@gmail.com",
+      "password": "8ballpool",
+      "id": 2
+    },
+    {
+      "firstname": "Ansh",
+      "lastname": "Girdhar",
+      "email": "andh@gmail.com",
+      "password": "ansh",
+      "id": 3
     }
   ]
 }
