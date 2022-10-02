@@ -1,6 +1,5 @@
 import { Heading, Select,Flex,Box} from "@chakra-ui/react";
 import axios from "axios";
-import { useState } from "react";
 
 
 export default function FilterSort({products1,setProducts1,page}){

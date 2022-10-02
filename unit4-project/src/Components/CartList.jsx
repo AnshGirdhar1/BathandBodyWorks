@@ -14,7 +14,7 @@ export default function CartList(){
 
     useEffect(() => {
         getCartProducts();
-    },[cartProducts])
+    },[])
 
     function deleteFromCart(id){
         axios({
